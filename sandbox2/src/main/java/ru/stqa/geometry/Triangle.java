@@ -1,13 +1,9 @@
+package ru.stqa.geometry;
+
 import static java.lang.Math.sqrt;
 
-public class Geometry {
-    public static void main(String[] args) {
-        printTrianglePerimeter(3.0, 4.0, 5.0);
-        printTriangleArea(3.0, 4.0, 5.0);
-
-    }
-
-    private static void printTriangleArea(double a, double b, double c) {
+public class Triangle {
+    static void printTriangleArea(double a, double b, double c) {
         System.out.println("Площадь треугольника со сторонами: " + a + ", " + b + ", " + c + " = " + triangleArea(a, b, c));
     }
 
