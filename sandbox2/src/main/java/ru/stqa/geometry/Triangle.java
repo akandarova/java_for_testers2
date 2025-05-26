@@ -4,7 +4,8 @@ import static java.lang.Math.sqrt;
 
 public class Triangle {
     static void printTriangleArea(double a, double b, double c) {
-        System.out.println("Площадь треугольника со сторонами: " + a + ", " + b + ", " + c + " = " + triangleArea(a, b, c));
+        String textArea = String.format("Площадь треугольника со сторонами: +%f + %f + %f = %f", a, b, c, triangleArea(a, b, c));
+        System.out.println(textArea);
     }
 
     private static double triangleArea(double a, double b, double c) {
@@ -12,7 +13,8 @@ public class Triangle {
     }
 
     static void printTrianglePerimeter(double a, double b, double c){
-        System.out.println("Периметр треугольника со сторонами: " + a + ", " + b + ", " + c + " = " + trianglePerimeter(a, b, c));
+        String textPerimeter = String.format("Периметр треугольника со сторонами: +%f + %f + %f = %f", a, b, c, trianglePerimeter(a, b, c));
+        System.out.println(textPerimeter);
     }
 
     private static double trianglePerimeter(double a, double b, double c) {
