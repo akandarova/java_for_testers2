@@ -3,22 +3,34 @@ package ru.stqa.geometry;
 import static java.lang.Math.sqrt;
 
 public class Triangle {
-    public static void printTriangleArea(double a, double b, double c) {
-        String textArea = String.format("Площадь треугольника со сторонами: +%f + %f + %f = %f", a, b, c, triangleArea(a, b, c));
+
+    private double sideA;
+    private double sideB;
+    private double sideC;
+
+    public Triangle(double sideA, double sideB, double sideC) {
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.sideC = sideC;
+    }
+
+    public static void printTriangleArea(Triangle t) {
+        String textArea = String.format("Площадь треугольника со сторонами: +%f + %f + %f = %f", t.sideA, t.sideB, t.sideC, t.area());
         System.out.println(textArea);
     }
 
-    public static double triangleArea(double a, double b, double c) {
-        return (sqrt((trianglePerimeter(a, b, c) / 2) * (trianglePerimeter(a, b, c) / 2 - a) * (trianglePerimeter(a, b, c) / 2 - b) * (trianglePerimeter(a, b, c) / 2 - c)));
-    }
-
-    public static void printTrianglePerimeter(double a, double b, double c) {
-        String textPerimeter = String.format("Периметр треугольника со сторонами: +%f + %f + %f = %f", a, b, c, trianglePerimeter(a, b, c));
+    public static void printTrianglePerimeter(Triangle t) {
+        String textPerimeter = String.format("Периметр треугольника со сторонами: +%f + %f + %f = %f", t.sideA, t.sideB, t.sideC, t.trianglePerimeter());
         System.out.println(textPerimeter);
     }
 
-    public static double trianglePerimeter(double a, double b, double c) {
-        return a + b + c;
+    public double trianglePerimeter(){
+        return this.sideA + this.sideB + this.sideC;
     }
+
+    public double area() {
+        return (sqrt((trianglePerimeter()/2) * (trianglePerimeter()/2 - this.sideA) * (trianglePerimeter()/2 - this.sideB) * (trianglePerimeter()/2 - this.sideC)));
+    }
+
 }
 
