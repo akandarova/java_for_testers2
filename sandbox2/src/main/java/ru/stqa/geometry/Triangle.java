@@ -48,7 +48,7 @@ public record Triangle (double sideA, double sideB, double sideC) {
 
     @Override
     public int hashCode() {
-        return Objects.hash(sideA, sideB, sideC);
+        return 1;
     }
 
 }
