@@ -1,5 +1,7 @@
 package ru.stqa.geometry;
 
+import java.util.Objects;
+
 import static java.lang.Math.sqrt;
 
 public record Triangle (double sideA, double sideB, double sideC) {
@@ -45,8 +47,8 @@ public record Triangle (double sideA, double sideB, double sideC) {
     }
 
     @Override
-    public int hushCode(){
-        return 1;
+    public int hashCode() {
+        return Objects.hash(sideA, sideB, sideC);
     }
 
 }
